@@ -1,0 +1,122 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+/* night / light mode switch" */
+
+#night_mode {
+  background-color: rgb(221, 221, 221);
+  color: rgb(53, 53, 53);
+}
+
+/* navbar */
+
+#navbar {
+  padding-right: 40px;
+  width: 3rem;
+  height: 100vh;
+  background-image: transparent;
+  position: fixed;
+}
+
+#decoration_line {
+  display: inline-block;
+  border-left: 3px solid #ccc;
+  border-radius: 10px;
+  /* margin: 0 10px; */
+  height: 70vh;
+  margin-left: 130px;
+  position: fixed;
+}
+
+.menu {
+  margin-left: 0.5rem;
+  margin-top: 3rem;;
+  display: grid;
+  grid-auto-flow: row;
+  grid-template: 1fr 1fr 1fr 1fr / 1fr;
+  gap: 1.5rem;
+}
+
+.menu a {
+  text-decoration: none;
+}
+
+.menu li {
+  list-style-type: none;
+}
+
+#social_links {
+  position: absolute;
+  bottom: 2px;
+  z-index: -1;
+  position: fixed;
+  display: grid; 
+}
+/* making them stack on top of each other */
+h1 {
+  font-size: 4rem;
+  padding-top: 2rem;
+}
+
+.logo {
+  height: 4rem;
+  margin-top: 0.4rem;
+}
+
+#left_side_screen {
+  position: fixed;
+  z-index: 1000 !important;
+}
+
+
+/* content pages */
+
+#hello_intro {
+  display: grid;
+  grid-template: 1fr / 320px 1fr;
+  gap: 1px;
+  justify-items: start;
+}
+
+#extra_intro {
+  display: grid;
+  grid-template: 1fr 1fr / 1fr;
+  gap: 1rem;
+  justify-items: start;
+}
+
+#snoop_button {
+  /* max-width: 5rem; */
+  border: none;
+  border-radius: 0.5rem;
+  padding-right: 3rem;
+  padding-left: 3rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  /* margin-left: 6rem; (in case i wanna move it left or right) */
+}
+
+#extra_text {
+  font-size: 2rem;
+}
+
+#image_name {
+  height: 8rem;
+}
+
+#content_page {
+  margin-left: 150px;
+  text-align: center;
+}
+
+.hero_page {
+  padding: 5rem;
+}
+
+#face_photo_night {
+  max-width: 100%;
+}
