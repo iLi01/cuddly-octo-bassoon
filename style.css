@@ -1,7 +1,3 @@
-:root {
-  /*  */
-}
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -14,7 +10,9 @@ body {
   display: flex;
   flex-direction: column;
   font-size: 16px;
-  min-height: 100svh;
+  background-color: rgb(245, 245, 245);
+  color: rgb(48, 48, 48);
+  width: 100%;
 }
 
 img {
@@ -38,7 +36,9 @@ header {
 
 header img {
   position: relative;
-  max-height: 3rem;
+  min-height: 5rem;
+  max-height: 3.5rem;
+  align-self: center;
 }
 
 header .header-wrapper {
@@ -46,13 +46,15 @@ header .header-wrapper {
   flex-direction: row;
   justify-content: space-between;
   padding: 1rem;
+  width: max-content;
+  /* how do i put it to the other side - separate */
 }
+
 nav {
   position: absolute;
   top: 100%;
   clip-path: circle(0% at center);
-  transition: clip-path 0.7s ease-in-out;
-  background-color: white;
+  transition: clip-path 0.7s ease-in-out; 
   width: 100%;
   /*IT'S OVER 9000! */
   z-index: 9000;
@@ -75,21 +77,23 @@ section {
   padding: max(1rem, 2vmax);
 }
 
-.hero--header {
-  --header-size: 10svh;
-  display: flex;
-  flex-direction: column;
-  padding: 5vw;
-}
 .hero--header > h2 {
-  font-size: var(--header-size); /* longest viewport percent (x/y)*/
-  min-width: 60vw;
+  font-size: 3.5rem;
+  max-width: 6rem;
+  white-space: nowrap;
 }
-.hero--header > img {
-  max-height: var(--header-size);
-  width: auto;
-  object-fit: contain;
-  align-self: flex-start;
+
+
+/* GRID MAIN PAGE */
+.hero--header {
+  display: grid;
+  flex-direction: row;
+  padding: 1rem;
+  grid-template: 1fr / 1fr 1fr;
+  gap: 1px;
+  justify-items: start;
+  flex-wrap: nowrap;
+  width: 36rem;
 }
 
 .sr-only {
@@ -104,6 +108,12 @@ section {
   border-width: 0;
 }
 
+#nav-expand-button {
+  position: relative;
+  top: 2px;
+  right: 2px;
+}
+
 /* desktop styles */
 @media (min-width: 60rem) {
   body {
@@ -113,28 +123,77 @@ section {
   body > header {
     position: sticky;
     top: 0;
-    max-width: min(16rem, 25svw);
+    max-width: min(12rem, 25svw);
     padding: 1rem;
-    border-right: 1px solid gray;
-    align-items: center;
+    border-right: 4px solid rgb(158, 158, 158);
     height: 100svh;
+    display: grid;
+    grid-template: 1fr 1fr 1fr / 1fr ;
   }
-  #nav-expand-button {
-    display: none;
+  
+  header img {
+    position: relative;
+    min-height: 8rem;
   }
-  .header-wrapper {
-    min-height: 25vh;
-    justify-content: center;
-    align-items: center;
-  }
+  
   nav {
     position: relative;
     top: 0;
     clip-path: unset;
     max-height: 100%;
-    justify-content: space-between;
   }
+  
   main {
     flex-direction: column;
   }
+
+  #nav-expand-button {
+    display: none;
+  }
+
+  .header-wrapper {
+    max-height: 3rem;
+    width: max-content;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  #header-nav {
+    display: flex !important;
+    justify-content: space-around;
+    align-content: space-around;
+    flex-flow: column nowrap;
+    gap: 65vh;
+    margin-top: 50px;
+  }
+
+
+  #social-links {
+    display: grid;
+    grid-template: 1fr / 1fr 1fr 1fr;
+    gap: 0.2rem;
+    align-items: center;
+    height: 10%;
+  }
+
+  #social-links img {
+    max-height: 2rem;
+  }
+
+  /* GRID MAIN PAGE */
+  .hero--header {
+    display: grid;
+    flex-direction: row;
+    padding: 2rem;
+    grid-template: 1fr / 1fr 1fr;
+    gap: 1px;
+    justify-items: start;
+    flex-wrap: nowrap;
+    width: 70rem;
+  }
+
+  .hero--header > h2 {
+    font-size: 6.7rem;
+  }
+
 }
